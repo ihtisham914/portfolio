@@ -1,10 +1,7 @@
 import { createApp } from "vue";
-
-// animations on scroll
-import ScrollAnimation from "./directive/scrollanimation";
+import { MotionPlugin } from "@vueuse/motion";
 
 const portfolio = createApp(App);
-portfolio.directive("animation", ScrollAnimation);
 
 /* import font awesome icon component */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -25,4 +22,5 @@ library.add(fas, fab, far);
 
 /* add font awesome icon component */
 portfolio.component("font-awesome-icon", FontAwesomeIcon);
+portfolio.use(MotionPlugin);
 portfolio.mount("#app");

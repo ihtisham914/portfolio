@@ -1,10 +1,48 @@
 <script>
 import Button from "./Button.vue";
+import gsap from "gsap";
 
 export default {
   name: "HeroSection",
   components: {
     Button,
+  },
+  setup() {
+    const beforeEnter = (el) => {
+      el.style.opacity = 0;
+      el.style.transform = "translateX(500px)";
+    };
+    const enter = (el) => {
+      el.style.opacity = 1;
+      gsap.to("h3", {
+        x: 0,
+        duration: 1,
+        ease: "in",
+      });
+
+      gsap.to(".intro_para", {
+        x: 0,
+        duration: 1,
+        ease: "in",
+        delay: 0.3,
+      });
+
+      gsap.to(".btn_one", {
+        x: 0,
+        duration: 1,
+        ease: "in",
+        delay: 0.4,
+      });
+
+      gsap.to(".btn_two", {
+        x: 0,
+        duration: 1,
+        ease: "in",
+        delay: 0.6,
+      });
+    };
+
+    return { beforeEnter, enter };
   },
 };
 </script>
@@ -13,18 +51,29 @@ export default {
   <div class="hero_container glass" id="home">
     <div class="hero_section flex">
       <div class="intro">
-        <h3>Hi, I am Ihtisham Ul Haq</h3>
-        <p class="intro_para">
-          I am a software Engineer with skills in Web Development, working in
-          different JavaScript Frameworks like React.js and Vue.js
-        </p>
+        <transition appear @before-enter="beforeEnter" @enter="enter">
+          <h3>Hi, I am Ihtisham Ul Haq</h3>
+        </transition>
+        <transition appear @before-enter="beforeEnter" @enter="enter">
+          <p class="intro_para">
+            I am a software Engineer with skills in Web Development, working in
+            different JavaScript Frameworks like React.js and Vue.js
+          </p>
+        </transition>
+
         <div class="btns">
-          <Button gotoid="contact" title="Let's Talk" />
-          <a href="#projects"><button class="btn">My Work &darr;</button></a>
+          <transition appear @before-enter="beforeEnter" @enter="enter">
+            <Button gotoid="contact" title="Let's Talk" class="btn_one" />
+          </transition>
+          <transition appear @before-enter="beforeEnter" @enter="enter">
+            <a href="#projects" class="btn_two"
+              ><button class="btn">My Work &darr;</button></a
+            >
+          </transition>
         </div>
       </div>
       <div class="img_container">
-        <div class="icons_links">
+        <div class="icons_links" v-motion-slide-top>
           <a href="https://gitlab.com/ihtisham914" target="_blank"
             ><font-awesome-icon :icon="['fab', 'gitlab']"
           /></a>
@@ -37,6 +86,7 @@ export default {
             ><font-awesome-icon :icon="['fab', 'linkedin']"
           /></a>
         </div>
+
         <div class="hero_img"></div>
       </div>
     </div>

@@ -12,8 +12,8 @@ export default {
 </script>
 
 <template>
-  <div class="container glass" id="skills">
-    <h3 class="heading">
+  <div class="container glass" id="skills" v-motion-slide-bottom>
+    <h3 class="heading" v-motion-slide-visible-once-right>
       <font-awesome-icon
         :icon="['fas', 'user-gear']"
         :style="{ color: '#9e00f9', marginRight: '1rem' }"
@@ -58,7 +58,7 @@ export default {
         para="Want to build front-end for your website in vue, here I am. I can create a fully dynamic front-end in vue."
         color="#c092f9"
       />
-      <div class="talk">
+      <div class="talk" v-motion-slide-visible-right>
         <font-awesome-icon
           :icon="['fas', 'person-circle-question']"
           class="fa-3x"

@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <div class="project_container" id="projects">
+  <div class="project_container" id="projects" v-motion-slide-visible-bottom>
     <h3 class="heading">
       <font-awesome-icon
         :icon="['fas', 'sheet-plastic']"
@@ -23,6 +23,7 @@ export default {
       This is first of my projects."
       link="https://chatresponsivedesign.netlify.app"
       img_1="chat.webp"
+      v-motion-slide-visible-right
     />
 
     <Project
@@ -30,12 +31,14 @@ export default {
       para="CharsadwalChappal is an E-commerce website built for a client. It is a full stack website. I designed it and built it. you can buy Traditional Charsadwal Chappal from here as well as new trending designs."
       link="https://charsadwalchappal.000webhostapp.com/client/index.php"
       img_1="chappal.webp"
+      v-motion-slide-visible-left
     />
     <Project
       title="CodingTech => built in React:"
       para="CodingTech is a simple, responsive Front-end website that is built in React. A customer can visit this site to get online services for web development. He can view profiles of the Team as well. He can contact the vendors through a form."
       link="https://codingtechreact.netlify.app"
       img_1="Codingtech1.webp"
+      v-motion-slide-visible-right
     />
 
     <Project
@@ -43,6 +46,7 @@ export default {
       para="My own reponsive portfolio built in vue.js. The Desing is inspired from the new trending design 'Glassmorphism'. Here I listed all my skills. I showcased all the projects that I have been working on."
       link="https://ihtishamportfolio.netlify.app"
       img_1="portfolio.webp"
+      v-motion-slide-visible-left
     />
   </div>
 </template>

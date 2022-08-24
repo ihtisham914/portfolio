@@ -11,15 +11,18 @@ export default {
 </script>
 
 <template>
-  <div class="project glass flex" v-animation>
+  <div class="project glass flex">
     <div class="project_left">
-      <h4 class="project_heading">
+      <h4 class="project_heading" v-motion-slide-visible-right>
         {{ title }}
       </h4>
-      <p class="project_description">
+      <p class="project_description" v-motion-slide-visible-right>
         {{ para }}
       </p>
-      <span style="margin-right: 1rem; font-size: 2.2rem">Link:</span
+      <span
+        style="margin-right: 1rem; font-size: 2.2rem"
+        v-motion-slide-visible-right
+        >Link:</span
       ><a :href="`${link}`" target="_blank">Click to visit the site</a>
     </div>
     <div class="img_container">
@@ -27,6 +30,7 @@ export default {
         class="img"
         :src="require(`../assets/images/${img_1}`)"
         alt="Project images"
+        v-motion-pop-visible
       />
     </div>
   </div>

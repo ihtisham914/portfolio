@@ -6,13 +6,22 @@ export default {
 
 <template>
   <div id="contact" class="contact_container container glass">
-    <h3 class="heading">Let's build something amazing for you</h3>
+    <h3 class="heading" v-motion-slide-visible-bottom>
+      Let's build something amazing for you
+    </h3>
     <div class="flex">
-      <div class="contact_form">
-        <form action="" method="post">
-          <input class="input" type="text" required placeholder="Your Name" />
+      <div class="contact_form" v-motion-slide-visible-left>
+        <form action="https://formspree.io/f/moqbvdvr" method="post">
           <input
             class="input"
+            type="text"
+            required
+            placeholder="Your Name"
+            name="name"
+          />
+          <input
+            class="input"
+            name="email"
             type="email"
             required
             placeholder="What's your Email"
@@ -23,10 +32,10 @@ export default {
             id="problem"
             placeholder="Just say it :)"
           ></textarea>
-          <button>Let's do it</button>
+          <button type="submit">Let's do it</button>
         </form>
       </div>
-      <div class="contact_image"></div>
+      <div class="contact_image" v-motion-slide-visible-right></div>
     </div>
   </div>
 </template>

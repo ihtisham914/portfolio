@@ -13,7 +13,11 @@ export default {
 </script>
 
 <template>
-  <div class="skill" :style="{ background: color }" data-aos="fade-left">
+  <div
+    class="skill"
+    :style="{ background: color }"
+    v-motion-slide-visible-bottom
+  >
     <div class="icons">
       <font-awesome-icon
         :icon="['fab', icon]"
